@@ -1,0 +1,42 @@
+#Head-nav {
+  height: 50px;
+  background: #444;
+  color: #403cf7;
+}
+#Head-nav .nav-wrap {
+  width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+  box-sizing: border-box;
+}
+#Head-nav .nav-wrap .nav-logo-wrap {
+  display: inline-block;
+  font-size: 26px;
+  width: 26px;
+  vertical-align: top;
+  margin-left: 12px;
+  margin-top: 4px;
+}
+#Head-nav .nav-wrap .nav-list-wrap {
+  width: 1160px;
+  display: inline-block;
+  height: 50px;
+  text-align: right;
+}
+#Head-nav .nav-wrap .nav-list-wrap .ant-menu {
+  color: #fff;
+  background: transparent;
+  display: inline-block;
+  height: 50px;
+}
+#Head-nav .nav-wrap .nav-list-wrap .ant-menu-horizontal {
+  border-color: transparent;
+}
+#Head-nav .nav-wrap .nav-list-wrap .ant-menu-horizontal .ant-menu-item,
+#Head-nav .nav-wrap .nav-list-wrap .ant-menu-horizontal .ant-menu-submenu {
+  margin-top: 0;
+}
+#Head-nav .nav-wrap .nav-list-wrap .ant-menu-horizontal {
+  line-height: 47px;
+}
+/*# sourceMappingURL=header.css.map */
