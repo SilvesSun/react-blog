@@ -1,17 +1,17 @@
 import React,{Component} from 'react';
 import {HashRouter,Route,Switch} from 'react-router-dom';
-import BasicLayout from "./layout/header";
+import DefaultLayout from './layouts/DefaultLayout/DefaultLayout'
 
-export default class RouterMap extends Component{
-  render() {
-    return (
-      <div id="router">
-        <HashRouter>
-          <Switch>
-            <Route path="/" component={BasicLayout}  exact />
-          </Switch>
-        </HashRouter>
-      </div>
-    )
-  }
+export default class RouterWrap extends Component{
+    render(){
+        return (
+            <div id="router">
+                <HashRouter>
+                    <Switch>
+                        <Route path="/" component={DefaultLayout}  exact />
+                    </Switch>
+                </HashRouter>
+            </div>
+        )
+    }
 }

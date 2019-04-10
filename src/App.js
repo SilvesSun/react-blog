@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import RouterMap from "./router";
+import RouterWrap from "./router";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <RouterMap/>
+        <RouterWrap/>
       </div>
     );
   }
