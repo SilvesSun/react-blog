@@ -1,0 +1,210 @@
+/* Shadow */
+/* Float Shadow */
+#Home {
+  min-height: 1000px;
+}
+#Home a {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+#Home ul {
+  list-style: none;
+}
+#Home #main-part {
+  width: 55%;
+  padding: 0 15px;
+  float: left;
+}
+#Home .button-a {
+  border: none;
+  background-color: #fff;
+}
+#Home svg {
+  color: #55acee;
+  padding: 0 5px;
+  width: 0.8em;
+  height: 0.8em;
+}
+#Home .blog-item {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+}
+#Home .hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+#Home .hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: "transform, opacity";
+  transition-property: "transform, opacity";
+}
+#Home .hvr-float-shadow:hover,
+#Home .hvr-float-shadow:focus,
+#Home .hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+#Home .hvr-float-shadow:hover:before,
+#Home .hvr-float-shadow:focus:before,
+#Home .hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+#Home .home-wrap {
+  width: 1280px;
+  margin: 16px auto 0;
+  max-width: 100%;
+}
+#Home .home-wrap .sidebar-left {
+  float: left;
+  width: 22%;
+}
+#Home .home-wrap .sidebar-left .user-card {
+  height: 188px;
+  padding: 0;
+}
+#Home .home-wrap .sidebar-left .user-card #user-card-name {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  margin-left: 82px;
+  padding-top: 10px;
+  color: #222;
+}
+#Home .home-wrap .sidebar-left .user-card #user-card-bg {
+  width: 100%;
+  height: 64px;
+  background-image: url(http://supcoder.net/20190411093635.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+#Home .home-wrap .sidebar-left .user-card .user-card-info {
+  height: 92px;
+  margin: 0 30px;
+}
+#Home .home-wrap .sidebar-left .user-card .user-card-info .num {
+  letter-spacing: 0;
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #00a1d6;
+}
+#Home .home-wrap .sidebar-left .user-card .user-card-info .text {
+  padding-top: 9px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0;
+  color: #99a2aa;
+}
+#Home .home-wrap .sidebar-left .user-card .user-card-info .avatar {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  left: 20px;
+  top: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+#Home .home-wrap .sidebar-left .user-card .user-card-info button {
+  height: 92px;
+  text-align: center;
+  padding: 0 10px;
+}
+#Home .home-wrap .sidebar-left .user-info-side .row {
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  padding-left: 25px;
+}
+#Home .home-wrap .sidebar-left .user-info-side .row span {
+  color: #222222;
+}
+#Home .home-wrap .sidebar-left .user-info-side .row a {
+  vertical-align: top;
+  color: #222222;
+}
+#Home .home-wrap .sidebar-left .user-info-side .row .button-a {
+  font-size: 14px;
+}
+#Home .home-wrap .sidebar-left .sidebar-widget .sidebar-title {
+  color: #00a1d6;
+  padding-left: 30px;
+}
+#Home .home-wrap .sidebar-left .sidebar-widget .time-str {
+  font-size: 14px;
+  padding: 0 35px;
+}
+#Home .home-wrap .sidebar-left .recommend header {
+  padding-left: 30px;
+  padding-top: 10px;
+  color: #00a1d6;
+}
+#Home .home-wrap .sidebar-left .recommend ul {
+  list-style: none;
+}
+#Home .home-wrap .sidebar-left .recommend ul li {
+  line-height: 18px;
+  overflow: hidden;
+  width: 85%;
+  font-size: 12px;
+  border-bottom: 1px solid #e5e9ef;
+}
+#Home .home-wrap .sidebar-left .recommend ul .post-title {
+  margin-bottom: 5px;
+}
+#Home .home-wrap .sidebar-left .recommend ul span {
+  display: inline-block;
+  min-width: 40px;
+}
+#Home .home-wrap .main-container {
+  width: 60%;
+  padding: 0 8px;
+}
+#Home .home-wrap .sidebar-right {
+  float: left;
+  width: 20%;
+  padding-right: 5px;
+  background-color: burlywood;
+}
+/*# sourceMappingURL=Home.css.map */

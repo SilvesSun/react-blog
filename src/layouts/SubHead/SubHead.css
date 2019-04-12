@@ -1,0 +1,14 @@
+#sub-head li:first-child {
+  padding-left: 0;
+}
+#sub-head li {
+  display: inline-block;
+  padding: 0 10px;
+}
+#sub-head li a {
+  color: #99a2aa;
+}
+#sub-head .ant-menu-item-selected a {
+  color: #00a1d6;
+}
+/*# sourceMappingURL=SubHead.css.map */

@@ -1,0 +1,107 @@
+#main-content .author {
+  padding: 15px 0 0;
+}
+#main-content .author .post-avatar {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 12px;
+  left: 12px;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+#main-content .author .author-name {
+  padding: 0 80px;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-top: 0;
+}
+#main-content .author .time-meta {
+  padding: 0 80px;
+  font-size: 4px;
+  font-weight: bolder;
+  transition: color 0.3s ease;
+  color: #99a2aa;
+  margin-top: -15px;
+}
+#main-content .tags {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+#main-content .tags a {
+  color: #eb7350;
+  cursor: pointer;
+}
+#main-content .excerpt {
+  height: 127px;
+  background: #fff;
+  border-radius: 4px;
+  text-align: left;
+  position: relative;
+  border: 1px solid #e5e9ef;
+  overflow: hidden;
+  margin: 2px 5px;
+}
+#main-content .excerpt .thumbnail img {
+  width: 30%;
+  height: 115px;
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  border-radius: 5%;
+  background-size: cover;
+  background-position: center center;
+  padding: 5px;
+}
+#main-content .excerpt .article-info {
+  vertical-align: top;
+  width: 70%;
+  height: 100%;
+  margin: 5px 0 0 32%;
+}
+#main-content .excerpt .article-info a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  outline: 0;
+  text-decoration: none;
+  color: #222;
+}
+#main-content .excerpt .article-info a .excerpt-title {
+  margin: 0 0 8px;
+  -webkit-transition: color 0.2s cubic-bezier(0.22, 0.58, 0.12, 0.98);
+  transition: color 0.2s cubic-bezier(0.22, 0.58, 0.12, 0.98);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 19px;
+  color: #222;
+  float: left;
+}
+#main-content .excerpt .article-info a .excerpt-info {
+  color: #99a2aa;
+  font-size: 12px;
+  padding-left: 30px;
+  text-align: left;
+  margin-left: -31px;
+}
+#main-content .excerpt .article-info a .excerpt-info p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  width: 440px;
+  position: relative;
+  line-height: 25px;
+  /* 高度为需要显示的行数*行高，比如这里我们显示两行，则为3 */
+  height: 75px;
+}
+/*# sourceMappingURL=Posts.css.map */

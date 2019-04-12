@@ -1,0 +1,53 @@
+#HeadNav{
+  height: 42px;
+  background: #ffffff;
+  color: #222;
+  .nav-wrap{
+    width:1200px;
+    margin:0 auto;
+    height:42px;
+    .nav-logo-wrap{
+      font-size:26px;
+      height:42px;
+      vertical-align: top;
+      margin-left:12px;
+      margin-top:4px;
+      float: left;
+    }
+
+    .nav-list-wrap{
+      width:400px;
+      display: inline-block;
+      height:42px;
+      text-align:left;
+      background-color: hsla(0,0%,100%,0);
+      float: left;
+      .ant-menu{
+        color: #222;
+        background: transparent;
+        display: inline-block;
+        height:42px;
+        list-style: none;
+        float: left;
+        .ant-menu-item{
+          float: left;
+          padding: 0 15px;
+        }
+        .ant-menu-horizontal{
+          border-color: transparent;
+        }
+        .ant-menu-horizontal .ant-menu-item, .ant-menu-horizontal .ant-menu-submenu{
+          margin-top:0;
+        }
+        a {
+          text-decoration: none;
+          color: #222222;
+        }
+
+        a:hover {
+          color: #00b5e5
+        }
+      }
+    }
+  }
+}
