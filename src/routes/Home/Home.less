@@ -17,7 +17,8 @@
   }
 
   #main-part{
-    width: 55%;
+    width: 75%;
+    margin-top: 42px;
     padding: 0 15px;
     float: left;
   }
@@ -39,7 +40,6 @@
     width: 100%;
     background: #fff;
     border-radius: 4px;
-    overflow: hidden;
     margin-bottom: 15px;
     -webkit-box-shadow: 0 1px 3px rgba(26,26,26,.1);
     box-shadow: 0 1px 3px rgba(26,26,26,.1);
@@ -54,8 +54,11 @@
     margin: 16px auto 0;
     max-width: 100%;
     .sidebar-left {
+      position: fixed;
+      z-index: 1;
+      margin-top: 42px;
       float: left;
-      width: 22%;
+      width: 15%;
       .user-card {
         height: 188px;
         padding: 0;
@@ -187,10 +190,10 @@
     }
 
     .sidebar-right {
-      float: left;
-      width: 20%;
-      padding-right: 5px;
-      background-color: burlywood;
+      margin-left: 1000px;
+      position: fixed;
+      width: 260px;
+      margin-top: 42px;
     }
   }
 }

@@ -12,7 +12,8 @@
   list-style: none;
 }
 #Home #main-part {
-  width: 55%;
+  width: 75%;
+  margin-top: 42px;
   padding: 0 15px;
   float: left;
 }
@@ -31,7 +32,6 @@
   width: 100%;
   background: #fff;
   border-radius: 4px;
-  overflow: hidden;
   margin-bottom: 15px;
   -webkit-box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
   box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
@@ -87,8 +87,11 @@
   max-width: 100%;
 }
 #Home .home-wrap .sidebar-left {
+  position: fixed;
+  z-index: 1;
+  margin-top: 42px;
   float: left;
-  width: 22%;
+  width: 15%;
 }
 #Home .home-wrap .sidebar-left .user-card {
   height: 188px;
@@ -202,9 +205,9 @@
   padding: 0 8px;
 }
 #Home .home-wrap .sidebar-right {
-  float: left;
-  width: 20%;
-  padding-right: 5px;
-  background-color: burlywood;
+  margin-left: 1000px;
+  position: fixed;
+  width: 260px;
+  margin-top: 42px;
 }
 /*# sourceMappingURL=Home.css.map */

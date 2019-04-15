@@ -3,6 +3,7 @@ import './Home.less'
 import SubHead from "../../layouts/SubHead/SubHead";
 import SiderbarLeft from "../SiderbarLeft/SiderbarLeft";
 import Posts from "../Posts/Posts";
+import SiderbarRight from "../SiderbarRight/SiderbarRight";
 
 export default class Home extends Component{
   render() {
@@ -16,8 +17,8 @@ export default class Home extends Component{
             <SubHead match={this.props.match} location={this.props.location} history={this.props.history}/>
             <Posts/>
           </div>
-          <div className="sidebar-right">
-
+          <div>
+            <SiderbarRight/>
           </div>
         </div>
       </div>

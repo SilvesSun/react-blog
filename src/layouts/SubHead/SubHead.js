@@ -18,9 +18,8 @@ export default class SubHead extends Component{
     };
 
   render() {
-    console.log(this.props)
     return (
-      <div  className='blog-item'>
+      <div  id='sub-head-wrap'>
         <div id='sub-head'>
           <Menu selectedKeys={[this.state.current]} mode="horizontal" onClick={this.handleClick}>
               <Menu.Item key="home">
