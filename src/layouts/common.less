@@ -1,0 +1,49 @@
+@import "../common/less/effects/shadow-and-glow-transitions/_shadow.less";
+@import "../common/less/_hacks.less";
+@import "../common/less/_mixins.less";
+@import "../common/less/_options.less";
+@import "../common/less/effects/shadow-and-glow-transitions/_float-shadow.less";
+
+#main-part{
+  width: 955px;
+  margin-top: 42px;
+  padding: 0 15px;
+  float: left;
+}
+
+.blog-item {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+  }
+
+.hvr-float-shadow{
+  .float-shadow()
+}
+
+svg{
+  color: #55acee;
+  padding: 0 5px;
+  width: 0.8em;
+  height: 0.8em;
+}
+
+.main-wrap{
+  width: 1280px;
+  margin: 16px auto 0 192px;
+  max-width: 100%;
+
+  .main-container {
+    width: 75%;
+    padding: 0 8px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #222222;
+}

@@ -13,14 +13,14 @@ export default class SubHead extends Component{
         }
     }
 
-    handleClick = (e) => {
-        this.setState({current: e.key})
-    };
+  handleClick = (e) => {
+      this.setState({current: e.key})
+  };
 
   render() {
     return (
       <div  id='sub-head-wrap'>
-        <div id='sub-head'>
+        <div className='sub-head'>
           <Menu selectedKeys={[this.state.current]} mode="horizontal" onClick={this.handleClick}>
               <Menu.Item key="home">
                   <Link to="/home">

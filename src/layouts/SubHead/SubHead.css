@@ -1,25 +1,25 @@
 #sub-head-wrap {
-  margin-left: 245px;
+  margin-left: 246px;
   position: fixed;
   z-index: 1;
-  width: 715px;
+  width: 710px;
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 15px;
   box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
 }
-#sub-head li:first-child {
+.sub-head li:first-child {
   padding-left: 0;
 }
-#sub-head li {
+.sub-head li {
   display: inline-block;
   padding: 0 10px;
 }
-#sub-head li a {
+.sub-head li a {
   color: #99a2aa;
 }
-#sub-head .ant-menu-item-selected a {
+.sub-head .ant-menu-item-selected a {
   color: #00a1d6;
 }
 /*# sourceMappingURL=SubHead.css.map */

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Icon} from "antd";
 import TimeWidget from "./TimeWidget";
+import './SidebarLeft.less'
 
-export default class SiderbarLeft extends Component{
+export default class SidebarLeft extends Component{
   render() {
     return (
       <div className="sidebar-left">

@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import './SiderbarRight.less'
+import '../../layouts/common.less';
+import './SidebarRight.less';
 import Poetry from "./Widgets/Poetry";
 import CloudTags from "./Widgets/CloudTags";
 
 
-export default class SiderbarRight extends Component{
+export default class SidebarRight extends Component{
   render() {
     return (
-      <div className='sidebar-right'>
+      <div id='sidebar-right'>
         <Poetry/>
 
         <CloudTags/>

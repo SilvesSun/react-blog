@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom';
 import Home from '../../routes/Home/Home';
 import Archive from "../../routes/Archive/Archive";
 import PostCategory from "../../routes/PostCategory/PostCategory";
+import PostDetail from "../../routes/Posts/PostDetail";
 export default class DefaultLayout extends Component{
     constructor(props){
         super(props);
@@ -17,6 +18,7 @@ export default class DefaultLayout extends Component{
                     <Route  path={this.props.match.url+'/'} component={Home}  exact/>
                     <Route  path={this.props.match.url+'/archive'} component={Archive}  />
                     <Route  path={this.props.match.url+'/category'} component={PostCategory}  />
+                    <Route  path={this.props.match.url+'/post/:Id'} component={PostDetail}  />
                 </div>
             </div>
         )

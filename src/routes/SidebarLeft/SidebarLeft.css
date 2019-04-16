@@ -1,0 +1,118 @@
+.main-wrap .sidebar-left {
+  position: fixed;
+  z-index: 1;
+  margin-top: 42px;
+  width: 15%;
+}
+.main-wrap .sidebar-left .user-card {
+  height: 188px;
+  padding: 0;
+}
+.main-wrap .sidebar-left .user-card #user-card-name {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  margin-left: 82px;
+  padding-top: 10px;
+  color: #222;
+}
+.main-wrap .sidebar-left .user-card #user-card-bg {
+  width: 100%;
+  height: 64px;
+  background-image: url(http://supcoder.net/20190411093635.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.main-wrap .sidebar-left .user-card .user-card-info {
+  height: 92px;
+  margin: 0 30px;
+}
+.main-wrap .sidebar-left .user-card .user-card-info .num {
+  letter-spacing: 0;
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #00a1d6;
+}
+.main-wrap .sidebar-left .user-card .user-card-info .text {
+  padding-top: 9px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0;
+  color: #99a2aa;
+}
+.main-wrap .sidebar-left .user-card .user-card-info .avatar {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  left: 20px;
+  top: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.main-wrap .sidebar-left .user-card .user-card-info button {
+  height: 92px;
+  text-align: center;
+  padding: 0 10px;
+}
+.main-wrap .sidebar-left .user-info-side .row {
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  padding-left: 25px;
+}
+.main-wrap .sidebar-left .user-info-side .row span {
+  color: #222222;
+}
+.main-wrap .sidebar-left .user-info-side .row a {
+  vertical-align: top;
+  color: #222222;
+}
+.main-wrap .sidebar-left .user-info-side .row .button-a {
+  font-size: 14px;
+}
+.main-wrap .sidebar-left .sidebar-widget .sidebar-title {
+  color: #00a1d6;
+  padding-left: 30px;
+}
+.main-wrap .sidebar-left .sidebar-widget .time-str {
+  font-size: 14px;
+  padding: 0 35px;
+}
+.main-wrap .sidebar-left .recommend header {
+  padding-left: 30px;
+  padding-top: 10px;
+  color: #00a1d6;
+}
+.main-wrap .sidebar-left .recommend ul {
+  list-style: none;
+}
+.main-wrap .sidebar-left .recommend ul li {
+  line-height: 18px;
+  overflow: hidden;
+  width: 85%;
+  font-size: 12px;
+  border-bottom: 1px solid #e5e9ef;
+}
+.main-wrap .sidebar-left .recommend ul .post-title {
+  margin-bottom: 5px;
+}
+.main-wrap .sidebar-left .recommend ul span {
+  display: inline-block;
+  min-width: 40px;
+}
+.button-a {
+  border: none;
+  background-color: #fff;
+}
+/*# sourceMappingURL=SidebarLeft.css.map */

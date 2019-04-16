@@ -20,7 +20,7 @@ export default class Post extends Component{
             <img src="https://shawnzeng.com/wp-content/uploads/2018/12/66568021_p0.jpg" alt=""/>
           </div>
           <div className="article-info">
-            <a href="">
+            <a href="home/post/1">
               <div className="excerpt-title">三数之和</div>
               <div className="excerpt-info">
                 <p>

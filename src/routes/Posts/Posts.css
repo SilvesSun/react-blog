@@ -1,6 +1,9 @@
 #main-content {
-  margin-left: 245px;
+  margin-left: 246px;
   margin-top: 60px;
+}
+#main-content .post-info:first-child {
+  margin-top: 10px;
 }
 #main-content .author {
   padding: 15px 0 0;
