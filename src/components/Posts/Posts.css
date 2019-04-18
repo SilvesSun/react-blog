@@ -1,9 +1,75 @@
+@import '~highlight.js/styles/github.css';
+.markdown {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0 5px 10px;
+}
+.markdown img {
+  width: 695px;
+  height: 300px;
+  margin-left: -5px;
+  border-radius: 5px;
+}
+.markdown pre > code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+.markdown p > code {
+  background-color: #fff5f5;
+  color: #ff502c;
+  font-size: 0.87em;
+  padding: 0.065em 0.4em;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  padding: 0 10px;
+  font-size: 24px;
+  border-bottom: 1px solid #ececec;
+}
+.markdown ul {
+  list-style: chocolate;
+}
+.markdown ul li {
+  margin-left: 2px;
+}
+.markdown p {
+  margin-bottom: 10px;
+  margin-top: 0;
+  line-height: 1.6;
+}
+.markdown pre {
+  font-size: 12px;
+  margin-bottom: 5px;
+  margin-top: 0;
+  word-wrap: normal;
+  border-radius: 3px;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+  background-color: #e1e1e1;
+}
 #main-content {
   margin-left: 246px;
   margin-top: 60px;
 }
 #main-content .post-info:first-child {
   margin-top: 10px;
+}
+#main-content .button-a {
+  color: #eb7350;
+  padding-left: 0px;
 }
 #main-content .author {
   padding: 15px 0 0;
@@ -19,7 +85,7 @@
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 #main-content .author .author-name {
-  padding: 0 80px;
+  padding: 8px 75px 0;
   font-size: 16px;
   font-weight: bolder;
   margin-top: 0;
@@ -41,10 +107,14 @@
   line-height: 1.6;
   cursor: pointer;
   margin-bottom: 10px;
+  padding-top: 10px;
 }
 #main-content .tags a {
   color: #eb7350;
   cursor: pointer;
+}
+#main-content .tags .time-clock {
+  padding-left: 3px;
 }
 #main-content .excerpt {
   height: 127px;
@@ -97,18 +167,10 @@
 #main-content .excerpt .article-info a .excerpt-info {
   color: #99a2aa;
   font-size: 12px;
+  line-height: 30px;
   padding-left: 30px;
   text-align: left;
   margin-left: -31px;
-}
-#main-content .excerpt .article-info a .excerpt-info p {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: normal;
-  width: 460px;
-  position: relative;
-  line-height: 25px;
-  /* 高度为需要显示的行数*行高，比如这里我们显示两行，则为3 */
-  height: 75px;
+  width: 90%;
 }
 /*# sourceMappingURL=Posts.css.map */

@@ -26,12 +26,12 @@ export default class HeadNav extends Component{
                     <div className="nav-list-wrap">
                         <Menu selectedKeys={[this.state.current]} mode="horizontal" onClick={this.handleClick}>
                             <Menu.Item key="home">
-                                <Link to="/home">
+                                <Link to="">
                                     首页
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="archive">
-                                <Link to="/home/archive">
+                                <Link to="archive">
                                     归档
                                 </Link>
                             </Menu.Item>

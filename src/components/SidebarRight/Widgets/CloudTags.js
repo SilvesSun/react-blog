@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './CloudTags.less';
-import '../../../layouts/common.less';
+import '../../../common/less/common.less';
 import {Icon} from "antd";
 
 export default class CloudTags extends Component{

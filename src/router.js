@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
-import DefaultLayout from './layouts/DefaultLayout/DefaultLayout'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import DefaultLayout from './components/DefaultLayout/DefaultLayout'
 
 export default class RouterWrap extends Component{
     render(){
@@ -8,8 +8,8 @@ export default class RouterWrap extends Component{
             <div id="router">
                 <BrowserRouter>
                     <Switch>
-                        <Route path='/home' component={DefaultLayout} />
-                        <Redirect path="/" to='/home' />
+                        <Route path='/' component={DefaultLayout} />
+                        {/*<Redirect path="/" to='/home' />*/}
                     </Switch>
                 </BrowserRouter>
             </div>

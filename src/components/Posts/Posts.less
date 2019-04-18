@@ -1,8 +1,15 @@
+@import "../../common/less/markdown.less";
+@import '~highlight.js/styles/github.css';
+
 #main-content {
   margin-left: 246px;
   margin-top: 60px;
   .post-info:first-child{
     margin-top: 10px;
+  }
+  .button-a{
+    color: #eb7350;
+    padding-left: 0px;
   }
 
   .author {
@@ -18,7 +25,7 @@
       box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);
     }
     .author-name {
-      padding: 0 80px;
+      padding: 8px 75px 0;;
       font-size: 16px;
       font-weight: bolder;
       margin-top: 0;
@@ -42,9 +49,13 @@
     line-height: 1.6;
     cursor: pointer;
     margin-bottom: 10px;
+    padding-top: 10px;
     a {
       color: #eb7350;
       cursor: pointer;
+    }
+    .time-clock{
+      padding-left: 3px;
     }
   }
   .excerpt{
@@ -98,19 +109,11 @@
         .excerpt-info{
           color: #99a2aa;
           font-size: 12px;
+          line-height: 30px;
           padding-left: 30px;
           text-align: left;
           margin-left: -31px;
-          p{
-            text-overflow: ellipsis;
-            overflow:hidden;
-            white-space:normal;
-            width:460px;
-            position:relative;
-            line-height:25px;
-            /* 高度为需要显示的行数*行高，比如这里我们显示两行，则为3 */
-            height:75px;
-          }
+          width: 90%;
         }
       }
     }

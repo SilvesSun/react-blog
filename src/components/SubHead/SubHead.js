@@ -23,12 +23,12 @@ export default class SubHead extends Component{
         <div className='sub-head'>
           <Menu selectedKeys={[this.state.current]} mode="horizontal" onClick={this.handleClick}>
               <Menu.Item key="home">
-                  <Link to="/home">
+                  <Link to="">
                       文章
                   </Link>
               </Menu.Item>
               <Menu.Item key="category">
-                  <Link to="/home/category">
+                  <Link to="category">
                       分类
                   </Link>
               </Menu.Item>
