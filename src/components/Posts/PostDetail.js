@@ -12,6 +12,7 @@ export default class PostDetail extends Component{
       content: '',
       title:'',
       created_time: '',
+      readNum: ''
     }
   }
 
@@ -26,6 +27,7 @@ export default class PostDetail extends Component{
             content: data.content,
             title: data.title,
             created_time: data.created_time,
+            readNum: data.read_num,
           })
       }
     );
@@ -39,6 +41,7 @@ export default class PostDetail extends Component{
           content={this.state.content}
           createdTime = {this.state.created_time}
           title={this.state.title}
+          readNum = {this.state.readNum}
         />
       </div>
     )

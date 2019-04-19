@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import DefaultLayout from './components/DefaultLayout/DefaultLayout'
 
 export default class RouterWrap extends Component{
@@ -8,8 +8,8 @@ export default class RouterWrap extends Component{
             <div id="router">
                 <BrowserRouter>
                     <Switch>
-                        <Route path='/' component={DefaultLayout} />
-                        {/*<Redirect path="/" to='/home' />*/}
+                        <Route path='/blogs' component={DefaultLayout}  exec/>
+                        <Redirect path="/" to='/blogs'/>
                     </Switch>
                 </BrowserRouter>
             </div>

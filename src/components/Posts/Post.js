@@ -11,7 +11,7 @@ export default class Post extends Component{
     let reg = '(http|https)://(.*.)(png|jpg|gif)';
     let matchStr = content.match(reg);
     let imgSrc = matchStr ? matchStr[0] : global.constants.defaulImg;
-    let detailUrl = 'blog/' + post.id;
+    let detailUrl = '/blogs/blog/' + post.id;
 
     return(
       <div className="post-info blog-item hvr-float-shadow">
@@ -27,6 +27,7 @@ export default class Post extends Component{
                 </span>
               )
             })}
+          <Icon type="eye" /><button className='button-a'>{post.read_num}</button>
           <Icon type="clock-circle" className='time-clock'/><button className='button-a'>{post.created_time}</button>
         </div>
         <div className="excerpt">

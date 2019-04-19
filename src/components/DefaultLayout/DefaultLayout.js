@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import HeadNav from '../../common/HeadNav';
-import {Route} from 'react-router-dom';
+import {Redirect, Route} from 'react-router-dom';
 import PostDetail from "../Posts/PostDetail";
 import SidebarLeft from "../SidebarLeft/SidebarLeft";
 import SidebarRight from "../SidebarRight/SidebarRight";
@@ -23,8 +23,9 @@ export default class DefaultLayout extends Component{
               <div>
                 <SidebarLeft/>
               </div>
-              <Route  path={this.props.match.url} component={MainContent} />
-              <Route  path={this.props.match.url+'blog/:Id'} component={PostDetail} />
+              {/*<Redirect  path={this.props.match.url }  to={this.props.match.url + 'blogs/'} />*/}
+              <Route  path='/blogs/'  component={MainContent} />
+              <Route  path='/blogs/blog/:Id' component={PostDetail} />
               <div>
                 <SidebarRight/>
               </div>

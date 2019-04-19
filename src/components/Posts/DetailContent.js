@@ -12,6 +12,13 @@ export default class PostDetail extends Component{
     return marked(content)
   }
 
+  componentDidMount() {
+    let s = document.createElement('script');
+    s.src = 'https://sksunblog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (document.head || document.body).appendChild(s);
+  }
+
 
   render() {
     const content = this.props.content;
@@ -29,15 +36,15 @@ export default class PostDetail extends Component{
               <button id='user-card-name' className='button-a'>sksun27</button>
             </div>
             <div className="post-meta">
-              <span><Icon type="eye" />755</span>
+              <span><Icon type="eye" />{this.props.readNum}</span>
               <span><Icon type="clock-circle" />{createdTime}</span>
-              <span><Icon type="message" />53</span>
             </div>
             <div className="post-content">
               <h1 className="post-title">{this.props.title}</h1>
               <div dangerouslySetInnerHTML={{__html: this.getMarkedHtml(content)}} className="markdown">
               </div>
             </div>
+            <div id="disqus_thread" className='disqus_thread'/>
           </div>
         </article>
       </div>

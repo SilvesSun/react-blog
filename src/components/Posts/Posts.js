@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Posts.less'
 import Post from "./Post";
+import { Pagination } from 'antd';
 
 export default class Posts extends Component{
   constructor(props){
@@ -15,7 +16,17 @@ export default class Posts extends Component{
     total: 0
   };
 
+  itemRender(current, type, originalElement) {
+  if (type === 'prev') {
+    return <a>上一页</a>;
+  } if (type === 'next') {
+    return <a>下一页</a>;
+  }
+  return originalElement;
+}
+
   render() {
+    console.log(this.props.current)
     return (
       <div id="main-content">
         <article className="">
@@ -25,6 +36,13 @@ export default class Posts extends Component{
               )
             })
           }
+          <Pagination showQuickJumper
+                      defaultCurrent={this.props.current}
+                      total={this.props.count}
+                      itemRender={this.itemRender}
+                      onChange={this.props.handleChange}
+                      className='blog-item hvr-float-shadow custom-page'
+          />
         </article>
       </div>
     )
