@@ -12,26 +12,38 @@ export default class PostDetail extends Component{
       content: '',
       title:'',
       created_time: '',
-      readNum: ''
+      readNum: '',
     }
   }
 
-  componentDidMount() {
-    let host = global.constants.host;
-    let detailId = this.props.match.params.Id;
-    const _this=this;
-    axios.get(host + '/blog/' + detailId).then(
+  getDetail(url){
+    axios.get(url).then(
       res=> {
         let data = res.data;
-        _this.setState({
+        this.setState({
             content: data.content,
             title: data.title,
             created_time: data.created_time,
             readNum: data.read_num,
           })
-      }
-    );
+      })
   }
+
+  componentDidMount() {
+    let host = global.constants.host;
+    let detailId = this.props.match.params.Id;
+    this.getDetail(host + '/blog/' + detailId);
+    let history = this.props.history;
+    history.listen(()=>{
+      let detail = history.location.pathname;
+      let detailStr = detail.match(/\d+/) !== null ? detail.match(/\d+/): '';
+      if (detailStr.length > 0){
+        let url = host + '/blog/' + detailStr[0] + '/';
+        this.getDetail(url);
+      }
+    })
+  }
+
 
   render() {
     return (

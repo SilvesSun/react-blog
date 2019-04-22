@@ -1,9 +1,40 @@
 import React, {Component} from 'react';
 import {Icon} from "antd";
 import TimeWidget from "./TimeWidget";
-import './SidebarLeft.less'
+import './SidebarLeft.less';
+import * as axios from 'axios'
 
 export default class SidebarLeft extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      blogCount: 0,
+      readCount: 0,
+      mostRead: [],
+    }
+  }
+
+  componentDidMount() {
+    let host = global.constants.host;
+    let url = host + '/blog/summary/';
+    axios.get(url).then(
+      res => {
+        let data = res.data;
+        this.setState(
+          {
+            blogCount: data.blog_count,
+            readCount: data.read_total,
+            mostRead: data.most_read,
+          }
+        )
+      }
+    );
+  }
+
+  clickHandle(url){
+    this.props.history.push(url)
+  }
+
   render() {
     return (
       <div className="sidebar-left">
@@ -14,10 +45,10 @@ export default class SidebarLeft extends Component{
               <div className="user-card-info">
                 <div id="user-card-info">
                   <button id="user-card-article" className='button-a'>
-                    <p className="num">30 <span className='text'>文章</span></p>
+                    <p className="num">{this.state.blogCount} <span className='text'>文章</span></p>
                   </button>
                   <button id="user-card-article" className='button-a'>
-                    <p className="num">2339 <span className='text'>阅读</span></p>
+                    <p className="num">{this.state.readCount}<span className='text'>阅读</span></p>
                   </button>
                 </div>
                 <img src="http://supcoder.net/20190411094326.png" alt="" className='avatar'/>
@@ -43,33 +74,22 @@ export default class SidebarLeft extends Component{
               <TimeWidget/>
             </div>
 
-            <div className='recommend blog-item hvr-float-shadow'>
-              <header><Icon type="book" />文章推荐</header>
+            <div className='recommend blog-item hvr-float-shadow' id='recommend'>
+              <header><Icon type="book" />最多阅读</header>
               <ul className='sidebar-posts-list'>
-                <li>
-                  <p className='post-title'>建设社会主义国家必要的过程</p>
-                  <p className='post-info'>
-                    <span><Icon type="eye" />755</span>
-                    <span><Icon type="clock-circle" />17小时前</span>
-                    <span><Icon type="message" />53</span>
-                  </p>
-                </li>
-                <li>
-                  <p className='post-title'>建设社会主义国家必要的过程</p>
-                  <p className='post-info'>
-                    <span><Icon type="eye" />755</span>
-                    <span><Icon type="clock-circle" />17小时前</span>
-                    <span><Icon type="message" />53</span>
-                  </p>
-                </li>
-                <li>
-                  <p className='post-title'>建设社会主义国家必要的过程</p>
-                  <p className='post-info'>
-                    <span><Icon type="eye" />755</span>
-                    <span><Icon type="clock-circle" />17小时前</span>
-                    <span><Icon type="message" />53</span>
-                  </p>
-                </li>
+                {this.state.mostRead.map((post) => {
+                  let url = '/blogs/blog/' + post.id + '/';
+                  return (
+                    <li key={post.id}>
+                      <p className='post-title' onClick={this.clickHandle.bind(this, url)}> {post.title}</p>
+                      <p className='post-info'>
+                      <span><Icon type="eye" />{post.read_num}</span>
+                      <span><Icon type="clock-circle" />{post.created_time}</span>
+                      </p>
+                    </li>
+                    )
+                  })
+                }
               </ul>
             </div>
       </div>

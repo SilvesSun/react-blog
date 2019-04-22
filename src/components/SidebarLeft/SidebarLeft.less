@@ -2,7 +2,11 @@
   .sidebar-left {
     position: fixed;
     z-index: 1;
+    height: 1500px;
+    overflow-y: auto;
     margin-top: 42px;
+    padding-bottom: 50px;
+
     width: 15%;
     .user-card {
       height: 188px;
@@ -119,12 +123,16 @@
 
         .post-title{
           margin-bottom: 5px;
+          cursor: pointer;
         }
 
         span {
           display: inline-block;
           min-width: 40px;
         }
+      }
+      .button-a{
+        text-overflow: ellipsis;
       }
     }
   }

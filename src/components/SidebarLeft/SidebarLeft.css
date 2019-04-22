@@ -1,7 +1,10 @@
 .main-wrap .sidebar-left {
   position: fixed;
   z-index: 1;
+  height: 1500px;
+  overflow-y: auto;
   margin-top: 42px;
+  padding-bottom: 50px;
   width: 15%;
 }
 .main-wrap .sidebar-left .user-card {
@@ -106,10 +109,14 @@
 }
 .main-wrap .sidebar-left .recommend ul .post-title {
   margin-bottom: 5px;
+  cursor: pointer;
 }
 .main-wrap .sidebar-left .recommend ul span {
   display: inline-block;
   min-width: 40px;
+}
+.main-wrap .sidebar-left .recommend .button-a {
+  text-overflow: ellipsis;
 }
 .button-a {
   border: none;

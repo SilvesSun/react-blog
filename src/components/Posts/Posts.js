@@ -26,7 +26,6 @@ export default class Posts extends Component{
 }
 
   render() {
-    console.log(this.props.current)
     return (
       <div id="main-content">
         <article className="">

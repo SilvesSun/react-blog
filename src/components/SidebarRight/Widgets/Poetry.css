@@ -2,8 +2,11 @@
   line-height: 15px;
   word-wrap: break-word;
   font-size: 10px;
-  padding: 0 10px;
+  padding: 0 5px;
   white-space: normal;
+}
+.poetry :first-child {
+  padding-top: 10px;
 }
 .poetry .p-author {
   float: right;

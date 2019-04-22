@@ -11,7 +11,10 @@ import MainContent from "../MainComponent/MainContent";
 export default class DefaultLayout extends Component{
   constructor(props){
     super(props);
+    this.state = {
+      detail: ''
     }
+  }
 
   render(){
     return (
@@ -21,11 +24,10 @@ export default class DefaultLayout extends Component{
           <div id="Home">
             <div className="main-wrap">
               <div>
-                <SidebarLeft/>
+                <SidebarLeft history={this.props.history} location={this.props.location}/>
               </div>
-              {/*<Redirect  path={this.props.match.url }  to={this.props.match.url + 'blogs/'} />*/}
-              <Route  path='/blogs/'  component={MainContent} />
-              <Route  path='/blogs/blog/:Id' component={PostDetail} />
+              <Route  path='/blogs/'  component={MainContent}/>
+              <Route  path='/blogs/blog/:Id' component={PostDetail}/>
               <div>
                 <SidebarRight/>
               </div>

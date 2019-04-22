@@ -5,26 +5,26 @@ import hljs from 'highlight.js';
 
 export default class PostDetail extends Component{
   getMarkedHtml(content){
-    // let md = new Remarkable();
     marked.setOptions({
       highlight: code => hljs.highlightAuto(code).value,
     });
     return marked(content)
   }
 
+
   componentDidMount() {
-    let s = document.createElement('script');
-    s.src = 'https://sksunblog.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (document.head || document.body).appendChild(s);
+    // let s = document.createElement('script');
+    // s.src = 'https://sksunblog.disqus.com/embed.js';
+    // s.setAttribute('data-timestamp', +new Date());
+    // (document.head || document.body).appendChild(s);
   }
 
 
   render() {
     const content = this.props.content;
     const createdTime = this.props.createdTime;
-    let reg = '(http|https)://(.*.)(png|jpg|gif)';
-    let matchStr = content.match(reg);
+    // let reg = '(http|https)://(.*.)(png|jpg|gif)';
+    // let matchStr = content.match(reg);
     this.getMarkedHtml(content);
 
     return (

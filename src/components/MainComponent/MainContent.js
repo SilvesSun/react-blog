@@ -25,7 +25,6 @@ export default class MainContent extends Component{
     axios.get(url).then(
       res=> {
         let data = res.data;
-        console.log(data);
         this.setState({
             total: data.count,
             blogArray: data.results,
@@ -33,7 +32,8 @@ export default class MainContent extends Component{
             previous: data.links.previous,
             pageSize: data.page_size,
             current: data.current_page
-          })
+          });
+        window.scrollTo(0, 0)
       }
     );
   }
@@ -60,7 +60,6 @@ export default class MainContent extends Component{
   render() {
     let search = this.props.location.search;
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
-    console.log(pageId)
 
     if (this.getLocLength()){
       if(!this.state.isLoading){
