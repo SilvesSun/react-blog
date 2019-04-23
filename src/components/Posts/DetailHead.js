@@ -5,14 +5,14 @@ import "../SubHead/SubHead.less";
 
 export default class DetailHead extends Component{
   render() {
+    let to_url = `/blogs/type/${this.props.typeid}/`
     return (
       <div  id='sub-head-wrap'>
         <div className='detail-menu'>
           <span>当前位置 ></span>
-          <Link to="/">
-              文章
+          <Link to= {to_url}>
+              {this.props.title}
           </Link>
-          <span> > {this.props.title}</span>
         </div>
       </div>
     )

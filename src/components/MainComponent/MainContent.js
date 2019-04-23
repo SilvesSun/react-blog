@@ -18,6 +18,7 @@ export default class MainContent extends Component{
       pageSize: 0,
       current: -1,
       reqPage: 1,
+      typeId: 0,
     };
   }
 
@@ -52,7 +53,7 @@ export default class MainContent extends Component{
     this.getPageData(reqUrl)
   }
 
-  getLocLength(){
+  isBlogPath(){
     let url = this.props.location.pathname;
     return url === '/blogs' || url === '/blogs/';
   }
@@ -61,7 +62,7 @@ export default class MainContent extends Component{
     let search = this.props.location.search;
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
 
-    if (this.getLocLength()){
+    if (this.isBlogPath()){
       if(!this.state.isLoading){
         return (
           <div className="main-container" id='main-part'>

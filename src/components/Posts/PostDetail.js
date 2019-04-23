@@ -36,7 +36,8 @@ export default class PostDetail extends Component{
     let history = this.props.history;
     history.listen(()=>{
       let detail = history.location.pathname;
-      let detailStr = detail.match(/\d+/) !== null ? detail.match(/\d+/): '';
+      let detailReg = new RegExp(/\/blogs\/blog\/\d+\//);
+      let detailStr = detail.match(detailReg) !== null ? detail.match(/\d+/): '';
       if (detailStr.length > 0){
         let url = host + '/blog/' + detailStr[0] + '/';
         this.getDetail(url);

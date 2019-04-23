@@ -2,49 +2,62 @@ import React, {Component} from 'react';
 import './CloudTags.less';
 import '../../../common/less/common.less';
 import {Icon} from "antd";
+import * as axios from 'axios';
+import {Link} from "react-router-dom";
 
 export default class CloudTags extends Component{
-  state = {
-    fontSize: 10,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      types: [],
+      blogCount: 0,
+    }
+  }
 
   static getRandomColor(){
     return '#'+('00000'+ (Math.random()*0x1000000<<0).toString(16)).substr(-6);
   }
 
-  setFontSize(elem) {
-    let valref = elem.getAttribute('valref');
-    let style = elem.style;
-    let total = 100;
-    let refSize = Math.round((valref / total) * valref );
-    style.fontSize = (refSize > 4 ? refSize : 4) + 'px'
+  handleClick(e){
+    this.props.history.push(`/blogs/type/${e}/`)
   }
 
   componentDidMount() {
-    let tag_elems = this._dom.querySelectorAll('a');
-    tag_elems.forEach(this.setFontSize)
+    let host = global.constants.host;
+    axios.get(host + '/type/summary/').then(
+      res => {
+        let types = res.data.type_summary;
+        let blogCount = res.data.blog_count;
+
+        this.setState({
+          types: types,
+          blogCount: blogCount
+        });
+      }
+    );
   }
 
   render() {
     return (
       <div className="cloud-tag blog-item hvr-float-shadow" ref={div => this._dom = div}>
-        <p className='sidebar-title'><Icon type="tags" />标签云</p>
+        <p className='sidebar-title'><Icon type="tags" />分类</p>
         <div className="tagBall">
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}} valref="30">WAXES</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}} valref="16" >3D标签云</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}} valref="33">WAXES</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}} valref="9">3D标签云</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}} valref="10">WAXES</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>3D标签云</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>WAXES</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>3D标签云</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>WAXES</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>3D标签云</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>WAXES</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>3D标签云</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>WAXES</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>3D标签云</a>
-          <a className="tag" href="#" style={{color: CloudTags.getRandomColor()}}>WAXES</a>
+          {this.state.types.map((type)=>{
+            let refSize = Math.round((type.count / this.state.blogCount)* 100);
+            let fontSize =(refSize > 2 ? refSize : 2) + 'px';
+            return (
+              <Link to={`/blogs/type/${type.tag_id}/`} key={type.tag_id}>
+              <span
+                key={type.tag_id} className="tag"
+                style={{color: CloudTags.getRandomColor(), fontSize: fontSize, backgroundColor: 'rgba(96, 95, 95, 0.4)'}}
+                // onClick={this.handleClick.bind(this, type.tag_id)}
+                title={type.name}
+                typeid = {type.tag_id}
+              >{type.name}</span>
+              </Link>
+            )
+          })}
+
         </div>
       </div>
     )

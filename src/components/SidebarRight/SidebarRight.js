@@ -10,7 +10,7 @@ export default class SidebarRight extends Component{
     return (
       <div id='sidebar-right'>
         <Poetry/>
-        <CloudTags/>
+        <CloudTags history={this.props.history} handleTypeChange={this.props.handleTypeChange.bind(this)}/>
       </div>
     )
   }

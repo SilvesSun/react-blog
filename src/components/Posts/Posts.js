@@ -36,10 +36,11 @@ export default class Posts extends Component{
             })
           }
           <Pagination showQuickJumper
-                      defaultCurrent={this.props.current}
+                      defaultCurrent={this.props.current > 1? this.props.current: 1}
                       total={this.props.count}
                       itemRender={this.itemRender}
                       onChange={this.props.handleChange}
+                      hideOnSinglePage={true}
                       className='blog-item hvr-float-shadow custom-page'
           />
         </article>

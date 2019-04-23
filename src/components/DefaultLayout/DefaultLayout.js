@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
 import HeadNav from '../../common/HeadNav';
-import {Redirect, Route} from 'react-router-dom';
 import PostDetail from "../Posts/PostDetail";
 import SidebarLeft from "../SidebarLeft/SidebarLeft";
 import SidebarRight from "../SidebarRight/SidebarRight";
 import MainContent from "../MainComponent/MainContent";
+import {Route} from "react-router-dom";
+import TypeDetail from "../TypeDetail/TypeDetail";
 
 
 
@@ -12,8 +13,18 @@ export default class DefaultLayout extends Component{
   constructor(props){
     super(props);
     this.state = {
-      detail: ''
+      detail: '',
+      typeId: 0,
+      blogs: [],
     }
+  }
+
+  handleTypeChange(e){
+    this.setState(
+      {
+        typeId: e
+      }
+    );
   }
 
   render(){
@@ -27,9 +38,10 @@ export default class DefaultLayout extends Component{
                 <SidebarLeft history={this.props.history} location={this.props.location}/>
               </div>
               <Route  path='/blogs/'  component={MainContent}/>
-              <Route  path='/blogs/blog/:Id' component={PostDetail}/>
+              <Route  path='/blogs/blog/:Id' component={PostDetail} />
+              <Route  path='/blogs/type/:Id' component={TypeDetail} />
               <div>
-                <SidebarRight/>
+                <SidebarRight history={this.props.history} handleTypeChange={this.handleTypeChange.bind(this)}/>
               </div>
             </div>
           </div>
