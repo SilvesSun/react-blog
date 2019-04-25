@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-import "../../common/HeadNav.less";
+import "../HeadNav/HeadNav.less";
 import "./PostDetail.less";
-import DetailHead from "./DetailHead";
 import DetailContent from "./DetailContent";
 import * as axios from "axios";
+import {Link} from "react-router-dom";
 
 export default class PostDetail extends Component{
   constructor(props){
@@ -49,7 +49,15 @@ export default class PostDetail extends Component{
   render() {
     return (
       <div className="main-container" id='main-part'>
-        <DetailHead title={this.state.title}/>
+        <div  id='sub-head-wrap'>
+          <div className='detail-menu'>
+            <span>当前位置 ></span>
+            <Link to= ''>
+                文章
+            </Link>
+            <span>> {this.state.title}</span>
+          </div>
+        </div>
         <DetailContent
           content={this.state.content}
           createdTime = {this.state.created_time}

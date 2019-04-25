@@ -18,9 +18,9 @@ export default class Posts extends Component{
 
   itemRender(current, type, originalElement) {
   if (type === 'prev') {
-    return <a>上一页</a>;
+    return <span>上一页</span>;
   } if (type === 'next') {
-    return <a>下一页</a>;
+    return <span>下一页</span>;
   }
   return originalElement;
 }
@@ -31,7 +31,7 @@ export default class Posts extends Component{
         <article className="">
           {this.props.posts.map((post) => {
             return (
-              <Post post={post} key={post.id}/>
+              <Post post={post} key={post.id} history={this.props.history}/>
               )
             })
           }

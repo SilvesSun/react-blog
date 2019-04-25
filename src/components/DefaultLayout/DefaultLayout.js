@@ -1,11 +1,13 @@
 import React,{Component} from 'react';
-import HeadNav from '../../common/HeadNav';
+import HeadNav from '../HeadNav/HeadNav';
 import PostDetail from "../Posts/PostDetail";
 import SidebarLeft from "../SidebarLeft/SidebarLeft";
 import SidebarRight from "../SidebarRight/SidebarRight";
 import MainContent from "../MainComponent/MainContent";
 import {Route} from "react-router-dom";
 import TypeDetail from "../TypeDetail/TypeDetail";
+import TagDetail from "../TagDetail/TagDetail";
+import Archive from "../Archive/Archive";
 
 
 
@@ -40,6 +42,8 @@ export default class DefaultLayout extends Component{
               <Route  path='/blogs/'  component={MainContent}/>
               <Route  path='/blogs/blog/:Id' component={PostDetail} />
               <Route  path='/blogs/type/:Id' component={TypeDetail} />
+              <Route  path='/blogs/tag/:Id' component={TagDetail} />
+              <Route  path='/blogs/archive/' component={Archive} />
               <div>
                 <SidebarRight history={this.props.history} handleTypeChange={this.handleTypeChange.bind(this)}/>
               </div>

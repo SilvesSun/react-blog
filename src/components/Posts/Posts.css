@@ -112,7 +112,7 @@
   margin-bottom: 10px;
   padding-top: 10px;
 }
-#main-content .tags a {
+#main-content .tags span.tag-a {
   color: #eb7350;
   cursor: pointer;
 }

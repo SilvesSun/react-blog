@@ -5,6 +5,7 @@ import "../SubHead/SubHead.less";
 
 export default class DetailHead extends Component{
   render() {
+
     let to_url = `/blogs/type/${this.props.typeid}/`
     return (
       <div  id='sub-head-wrap'>

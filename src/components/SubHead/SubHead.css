@@ -16,8 +16,13 @@
   display: inline-block;
   padding: 0 10px;
 }
-.sub-head li a {
+.sub-head li a,
+.sub-head li span {
   color: #99a2aa;
+  font-size: 15px;
+}
+.sub-head li span {
+  margin-left: -32px;
 }
 .sub-head .ant-menu-item-selected a {
   color: #00a1d6;

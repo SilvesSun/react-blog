@@ -3,7 +3,8 @@ import Posts from "../Posts/Posts";
 import * as axios from 'axios';
 import {Link} from "react-router-dom";
 
-export default class TypeDetail extends Component{
+
+export default class TagDetail extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -24,8 +25,8 @@ export default class TypeDetail extends Component{
       res =>{
         let data = res.data;
         this.setState({
-          typeId: data.id,
-          title: data.type_name,
+          tagId: data.id,
+          title: data.tag_name,
           blogArray: data.results,
           total: data.count,
           nextPage: data.links.next,
@@ -38,9 +39,9 @@ export default class TypeDetail extends Component{
   }
 
   handleChange(e){
-    this.props.history.push(`/blogs/type/${this.state.typeId}/?page=${e}`);
+    this.props.history.push(`/blogs/tag/${this.state.tagId}/?page=${e}`);
     let host = global.constants.host;
-    let reqUrl = host + '/type/'+this.state.typeId+'/type_blog/?page='+ e;
+    let reqUrl = host + '/tag/'+this.state.tagId+'/tag_blog/?page='+ e;
     this.getTagBlog(reqUrl)
   }
 
@@ -48,15 +49,15 @@ export default class TypeDetail extends Component{
     let pathname = this.props.location.pathname;
     let typeObj = pathname.match(/\d+/);
     let typeId = parseInt(typeObj[0]) > 0 ? typeObj[0] : 1;
-    let url = `${this.host}/type/${typeId}/type_blog/`;
+    let url = `${this.host}/tag/${typeId}/tag_blog/`;
     this.getTagBlog(url);
     let history = this.props.history;
     history.listen(()=>{
       let detail = history.location.pathname;
-      let detailReg = new RegExp(/\/blogs\/type\/\d+\//);
+      let detailReg = new RegExp(/\/blogs\/tag\/\d+\//);
       let detailStr = detail.match(detailReg) !== null ? detail.match(/\d+/): '';
       if (detailStr.length > 0){
-      let url = this.host + '/type/' + detailStr[0] + '/type_blog/';
+      let url = this.host + '/tag/' + detailStr[0] + '/tag_blog/';
       this.getTagBlog(url);
       }
     })
@@ -69,15 +70,12 @@ export default class TypeDetail extends Component{
   render() {
     let search = this.props.location.search;
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
-    let to_url = `/blogs/type/${this.state.typeId}/`;
+    // let to_url = `/blogs/tag/${this.state.typeId}/`;
     return (
       <div className="main-container" id='main-part' ref={main => this._main = main}>
         <div  id='sub-head-wrap'>
           <div className='detail-menu'>
-            <span>当前位置 > <Link to=""> 文章 > </Link>分类 ></span>
-            <Link to= {to_url}>
-                {this.state.title}
-            </Link>
+            <span>当前位置 ><Link to=""> 文章> </Link> 标签 > {this.state.title}</span>
           </div>
         </div>
         <Posts match={this.props.match}

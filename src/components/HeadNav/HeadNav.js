@@ -31,7 +31,7 @@ export default class HeadNav extends Component{
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="archive">
-                                <Link to="archive">
+                                <Link to="/blogs/archive/">
                                     归档
                                 </Link>
                             </Menu.Item>

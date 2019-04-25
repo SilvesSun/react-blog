@@ -4,6 +4,11 @@ import {Link} from "react-router-dom";
 import '../../config';
 
 export default class Post extends Component{
+  handleTagClick(tagId){
+    let tagUrl = `/blogs/tag/${tagId}`;
+    this.props.history.push(tagUrl)
+  }
+
   render() {
     const post = this.props.post;
     const content = post.content;
@@ -23,7 +28,7 @@ export default class Post extends Component{
           {tags.map((tag)=>{
               return (
                 <span key={tag.id}>
-                  <Icon type="tag"/><a>{tag.name}</a>
+                  <Icon type="tag"/><span className='tag-a' onClick={this.handleTagClick.bind(this, tag.id)}>{tag.name}</span>
                 </span>
               )
             })}
