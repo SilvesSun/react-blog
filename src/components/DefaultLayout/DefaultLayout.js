@@ -8,8 +8,7 @@ import {Route} from "react-router-dom";
 import TypeDetail from "../TypeDetail/TypeDetail";
 import TagDetail from "../TagDetail/TagDetail";
 import Archive from "../Archive/Archive";
-
-
+import SearchRes from "../SearchRes/SearchRes";
 
 export default class DefaultLayout extends Component{
   constructor(props){
@@ -17,7 +16,7 @@ export default class DefaultLayout extends Component{
     this.state = {
       detail: '',
       typeId: 0,
-      blogs: [],
+      searchText: '',
     }
   }
 
@@ -28,6 +27,7 @@ export default class DefaultLayout extends Component{
       }
     );
   }
+
 
   render(){
     return (
@@ -44,6 +44,7 @@ export default class DefaultLayout extends Component{
               <Route  path='/blogs/type/:Id' component={TypeDetail} />
               <Route  path='/blogs/tag/:Id' component={TagDetail} />
               <Route  path='/blogs/archive/' component={Archive} />
+              <Route  path='/blogs/search/' component={SearchRes} />
               <div>
                 <SidebarRight history={this.props.history} handleTypeChange={this.handleTypeChange.bind(this)}/>
               </div>

@@ -62,8 +62,8 @@ export default class MainContent extends Component{
     let search = this.props.location.search;
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
 
-    if (this.isBlogPath()){
-      if(!this.state.isLoading){
+    if (!this.state.isLoading){
+      if(this.isBlogPath()){
         return (
           <div className="main-container" id='main-part'>
             <SubHead match={this.props.match} location={this.props.location} history={this.props.history}/>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Menu} from 'antd'
+import {Menu, Input} from 'antd'
 import './HeadNav.less'
 import {Link} from "react-router-dom";
 
@@ -16,7 +16,13 @@ export default class HeadNav extends Component{
     handleClick = (e) => {
         this.setState({current: e.key})
     };
+
+    handleSearch(v){
+      this.props.history.push(`/blogs/search/?q=${v}`)
+    }
+
     render(){
+        const Search = Input.Search;
         return (
             <div id="HeadNav">
                 <div className="nav-wrap">
@@ -36,6 +42,13 @@ export default class HeadNav extends Component{
                                 </Link>
                             </Menu.Item>
                         </Menu>
+                    </div>
+                    <div className="search">
+                        <Search
+                            placeholder="search"
+                            style={{ width: 145 }}
+                            onSearch={value => this.handleSearch(value)}
+                          />
                     </div>
                 </div>
             </div>

@@ -2,9 +2,29 @@
   .archive{
     background-color: #ffffff;
     border-radius: 4px;
-    padding-bottom: 20px;
+    padding-bottom: 75px;
     padding-top: 10px;
 
+    .year-list summary{
+      width: fit-content;
+      direction: rtl;
+      position: relative;
+      left: -10px;
+      top: -42px;
+    }
+
+    .month-list summary {
+        width: fit-content;
+        direction: rtl;
+        position: relative;
+        left: 40px;
+    }
+    ::-webkit-details-marker {
+        direction: ltr;
+    }
+    ::-moz-list-bullet {
+        direction: ltr;
+    }
     .archive-title{
       margin-left: -50px;
       position: relative;
@@ -13,12 +33,16 @@
 
     .month-detail{
       margin-left: -50px;
+      margin-top: -40px;
       .archive-sub-title{
         width: 50px;
         position: relative;
-        top: -22px;
-        left: 15px;
-        float: left;
+        top: -5px;
+        left: 5px;
+      }
+
+      summary::before{
+        color: #99a2aa;
       }
       .post-date{
         margin: 0 4px;
@@ -40,7 +64,7 @@
   @line-height-base: 1.5;
 
   .ant-timeline {
-    margin: 10px 20px 5px;
+    margin: 10px 20px -40px;
     padding-left: 50px;
     list-style: none;
 
