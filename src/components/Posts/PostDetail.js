@@ -5,6 +5,7 @@ import DetailContent from "./DetailContent";
 import * as axios from "axios";
 import {Link} from "react-router-dom";
 
+
 export default class PostDetail extends Component{
   constructor(props){
     super(props);
@@ -13,6 +14,7 @@ export default class PostDetail extends Component{
       title:'',
       created_time: '',
       readNum: '',
+      isLoading: true,
     }
   }
 
@@ -25,6 +27,7 @@ export default class PostDetail extends Component{
             title: data.title,
             created_time: data.created_time,
             readNum: data.read_num,
+            isLoading: false,
           })
       })
   }
@@ -47,12 +50,13 @@ export default class PostDetail extends Component{
 
 
   render() {
-    return (
+    if (!this.state.isLoading){
+      return (
       <div className="main-container" id='main-part'>
         <div  id='sub-head-wrap'>
           <div className='detail-menu'>
             <span>当前位置 ></span>
-            <Link to= ''>
+            <Link to= '' >
                 文章
             </Link>
             <span>> {this.state.title}</span>
@@ -66,5 +70,25 @@ export default class PostDetail extends Component{
         />
       </div>
     )
+    }else {
+      var Spinner = require('react-spinkit');
+      return (
+        <div className="main-container" id='main-part'>
+        <div  id='sub-head-wrap'>
+          <div className='detail-menu'>
+            <span>当前位置 ></span>
+            <Link to= ''>
+                文章 >
+            </Link>
+            <span className='warning'>请稍后</span>
+          </div>
+        </div>
+        <div className="main-content">
+          <article className="detail-content"><Spinner name="three-bounce" color="#0b98eb" padding-left={'20px'}/></article>
+        </div>
+      </div>
+      )
+    }
+
   }
 }

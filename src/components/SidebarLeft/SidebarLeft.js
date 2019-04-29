@@ -16,7 +16,7 @@ export default class SidebarLeft extends Component{
 
   componentDidMount() {
     let host = global.constants.host;
-    let url = host + '/blog/summary/';
+    let url = host + '/blog/recommend/';
     axios.get(url).then(
       res => {
         let data = res.data;
@@ -75,7 +75,7 @@ export default class SidebarLeft extends Component{
             </div>
 
             <div className='recommend blog-item hvr-float-shadow' id='recommend'>
-              <header><Icon type="book" />最多阅读</header>
+              <header><Icon type="book" />随机推荐</header>
               <ul className='sidebar-posts-list'>
                 {this.state.mostRead.map((post) => {
                   let url = '/blogs/blog/' + post.id + '/';
