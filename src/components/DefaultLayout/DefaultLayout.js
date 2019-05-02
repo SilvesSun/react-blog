@@ -10,7 +10,7 @@ import TypeDetail from "../TypeDetail/TypeDetail";
 import TagDetail from "../TagDetail/TagDetail";
 import SearchRes from "../SearchRes/SearchRes";
 import Archive from "../Archive/Archive";
-
+import '../base.less'
 
 export default class DefaultLayout extends Component{
   constructor(props){

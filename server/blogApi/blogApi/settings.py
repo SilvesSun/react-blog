@@ -24,7 +24,7 @@ SECRET_KEY = 'jd01%znl3k*ka@lt#u)wfe*rzs*l0rb50$=-jv8=5%7n@=$2@@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -130,11 +130,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:3000',
     'localhost:3000'
-    '174.137.59.60:3000'
 
 )
 
@@ -158,5 +157,3 @@ CACHES = {
         },
     },
 }
-
-STATIC_ROOT = '/home/www/react-blog/build/static'
