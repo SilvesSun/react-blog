@@ -1,0 +1,64 @@
+[uWSGI] getting INI configuration from /home/www/react-blog/server/blogApi/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  2 03:37:46 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 30 April 2019 02:19:33
+os: Linux-4.10.4-1.el7.elrepo.x86_64 #1 SMP Sat Mar 18 12:50:10 EDT 2017
+nodename: host.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/www/react-blog/server/blogApi
+detected binary path: /root/.virtualenvs/restBlog/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/www/blogApi/server/blogApi
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+chdir(): No such file or directory [core/uwsgi.c line 1647]
+[uWSGI] getting INI configuration from /home/www/react-blog/server/blogApi/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  2 03:37:48 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 30 April 2019 02:19:33
+os: Linux-4.10.4-1.el7.elrepo.x86_64 #1 SMP Sat Mar 18 12:50:10 EDT 2017
+nodename: host.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/www/react-blog/server/blogApi
+detected binary path: /root/.virtualenvs/restBlog/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/www/blogApi/server/blogApi
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+chdir(): No such file or directory [core/uwsgi.c line 1647]
+[uWSGI] getting INI configuration from /home/www/react-blog/server/blogApi/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  2 03:37:50 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 30 April 2019 02:19:33
+os: Linux-4.10.4-1.el7.elrepo.x86_64 #1 SMP Sat Mar 18 12:50:10 EDT 2017
+nodename: host.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/www/react-blog/server/blogApi
+detected binary path: /root/.virtualenvs/restBlog/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/www/blogApi/server/blogApi
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+chdir(): No such file or directory [core/uwsgi.c line 1647]
+[uWSGI] getting INI configuration from /home/www/react-blog/server/blogApi/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu May  2 03:37:53 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-36) on 30 April 2019 02:19:33
+os: Linux-4.10.4-1.el7.elrepo.x86_64 #1 SMP Sat Mar 18 12:50:10 EDT 2017
+nodename: host.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 2
+current working directory: /home/www/react-blog/server/blogApi
+detected binary path: /root/.virtualenvs/restBlog/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/www/blogApi/server/blogApi
+chdir(): No such file or directory [core/uwsgi.c line 2623]
+chdir(): No such file or directory [core/uwsgi.c line 1647]
