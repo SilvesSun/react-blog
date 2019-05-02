@@ -53,7 +53,7 @@ export default class TypeDetail extends Component{
     let history = this.props.history;
     history.listen(()=>{
       let detail = history.location.pathname;
-      let detailReg = new RegExp(/\/blogs\/type\/\d+\//);
+      let detailReg = new RegExp(/\/type\/\d+\//);
       let detailStr = detail.match(detailReg) !== null ? detail.match(/\d+/): '';
       if (detailStr.length > 0){
       let url = this.host + '/type/' + detailStr[0] + '/type_blog/';
@@ -69,16 +69,14 @@ export default class TypeDetail extends Component{
   render() {
     let search = this.props.location.search;
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
-    let to_url = `/blogs/type/${this.state.typeId}/`;
+    let to_url = `/type/${this.state.typeId}/`;
     return (
-      <div className="main-container" id='main-part' ref={main => this._main = main}>
-        <div  id='sub-head-wrap'>
-          <div className='detail-menu'>
-            <span>当前位置 > <Link to=""> 文章 > </Link>分类 ></span>
-            <Link to= {to_url}>
-                {this.state.title}
-            </Link>
-          </div>
+      <div className="main-container" ref={main => this._main = main}>
+        <div className='detail-menu'>
+          <span>当前位置 > <Link to=""> 文章 > </Link>分类 ></span>
+          <Link to= {to_url}>
+              {this.state.title}
+          </Link>
         </div>
         <Posts match={this.props.match}
                location={this.props.location}

@@ -1,6 +1,4 @@
 import React,{Component} from 'react';
-import "../HeadNav/HeadNav.less";
-import "./PostDetail.less";
 import DetailContent from "./DetailContent";
 import * as axios from "axios";
 import {Link} from "react-router-dom";
@@ -39,7 +37,7 @@ export default class PostDetail extends Component{
     let history = this.props.history;
     history.listen(()=>{
       let detail = history.location.pathname;
-      let detailReg = new RegExp(/\/blogs\/blog\/\d+\//);
+      let detailReg = new RegExp(/\/blog\/\d+\//);
       let detailStr = detail.match(detailReg) !== null ? detail.match(/\d+/): '';
       if (detailStr.length > 0){
         let url = host + '/blog/' + detailStr[0] + '/';
@@ -52,15 +50,13 @@ export default class PostDetail extends Component{
   render() {
     if (!this.state.isLoading){
       return (
-      <div className="main-container" id='main-part'>
-        <div  id='sub-head-wrap'>
-          <div className='detail-menu'>
-            <span>当前位置 ></span>
-            <Link to= '' >
-                文章
-            </Link>
-            <span>> {this.state.title}</span>
-          </div>
+      <div className="main-container">
+        <div className='detail-menu'>
+          <span>当前位置 ></span>
+          <Link to= '/blogs/' >
+              文章
+          </Link>
+          <span>> {this.state.title}</span>
         </div>
         <DetailContent
           content={this.state.content}
@@ -73,19 +69,15 @@ export default class PostDetail extends Component{
     }else {
       var Spinner = require('react-spinkit');
       return (
-        <div className="main-container" id='main-part'>
-        <div  id='sub-head-wrap'>
-          <div className='detail-menu'>
-            <span>当前位置 ></span>
-            <Link to= ''>
-                文章 >
-            </Link>
-            <span className='warning'>请稍后</span>
-          </div>
+        <div className="main-container">
+        <div className='detail-menu'>
+          <span>当前位置 ></span>
+          <Link to= '/blogs/'>
+              文章 >
+          </Link>
+          <span className='warning'>请稍后</span>
         </div>
-        <div className="main-content">
-          <article className="detail-content"><Spinner name="three-bounce" color="#0b98eb" padding-left={'20px'}/></article>
-        </div>
+        <article className="detail-content"><Spinner name="three-bounce" color="#0b98eb" padding-left={'20px'}/></article>
       </div>
       )
     }

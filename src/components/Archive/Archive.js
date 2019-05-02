@@ -29,11 +29,9 @@ export default class Archive extends Component{
 
   render() {
     return (
-      <div className="main-container" id='main-part'>
-        <div  id='sub-head-wrap'>
-          <div className='detail-menu'>
-            <span>当前位置 > <Link to=""> 文章 > </Link>归档</span>
-          </div>
+      <div className="main-container">
+        <div className='detail-menu'>
+          <span>当前位置 > <Link to=""> 文章 > </Link>归档</span>
         </div>
         <div id="main-content">
           <section className="archive">

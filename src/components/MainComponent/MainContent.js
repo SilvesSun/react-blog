@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
-import SubHead from "../SubHead/SubHead";
 import Posts from "../Posts/Posts";
 import * as axios from "axios";
-import "./MainContent.less";
 
 import "../../config";
+import {Menu} from "antd";
+import {Link} from "react-router-dom";
 
 export default class MainContent extends Component{
   constructor(props){
@@ -19,6 +19,7 @@ export default class MainContent extends Component{
       current: -1,
       reqPage: 1,
       typeId: 0,
+      isLoading: false,
     };
   }
 
@@ -62,31 +63,26 @@ export default class MainContent extends Component{
     let search = this.props.location.search;
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
 
-    if (!this.state.isLoading){
-      if(this.isBlogPath()){
-        return (
-          <div className="main-container" id='main-part'>
-            <SubHead match={this.props.match} location={this.props.location} history={this.props.history}/>
-            <Posts match={this.props.match}
-                   location={this.props.location}
-                   history={this.props.history}
-                   posts={this.state.blogArray}
-                   count = {this.state.total}
-                   current = {parseInt(pageId)}
-                   handleChange={this.handleChange.bind(this)}
-            />
-          </div>
-        )
-      }else{
-        return (
-          <div>loading</div>
-        )
-      }
-
-    }else {
-      return (
-        <div></div>
-      )
-    }
+    return (
+      <div className="main-container">
+        <div className='sub-head'>
+          <Menu mode="horizontal" onClick={this.handleClick}>
+              <Menu.Item key="home">
+                  <Link to="/blogs/"> 文章 </Link>
+              </Menu.Item>
+          </Menu>
+        </div>
+        <div>
+          <Posts match={this.props.match}
+               location={this.props.location}
+               history={this.props.history}
+               posts={this.state.blogArray}
+               count = {this.state.total}
+               current = {parseInt(pageId)}
+               handleChange={this.handleChange.bind(this)}
+        />
+        </div>
+      </div>
+    )
   }
 }

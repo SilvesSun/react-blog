@@ -39,7 +39,7 @@ export default class TagDetail extends Component{
   }
 
   handleChange(e){
-    this.props.history.push(`/blogs/tag/${this.state.tagId}/?page=${e}`);
+    this.props.history.push(`/tag/${this.state.tagId}/?page=${e}`);
     let host = global.constants.host;
     let reqUrl = host + '/tag/'+this.state.tagId+'/tag_blog/?page='+ e;
     this.getTagBlog(reqUrl)
@@ -72,11 +72,9 @@ export default class TagDetail extends Component{
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
     // let to_url = `/blogs/tag/${this.state.typeId}/`;
     return (
-      <div className="main-container" id='main-part' ref={main => this._main = main}>
-        <div  id='sub-head-wrap'>
-          <div className='detail-menu'>
-            <span>当前位置 ><Link to=""> 文章> </Link> 标签 > {this.state.title}</span>
-          </div>
+      <div className="main-container" ref={main => this._main = main}>
+        <div className='detail-menu'>
+          <span>当前位置 ><Link to=""> 文章> </Link> 标签 > {this.state.title}</span>
         </div>
         <Posts match={this.props.match}
                location={this.props.location}

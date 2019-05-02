@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './Posts.less'
 import Post from "./Post";
 import { Pagination } from 'antd';
 
@@ -28,7 +27,7 @@ export default class Posts extends Component{
   render() {
     return (
       <div id="main-content">
-        <article className="">
+        <article className="article-area">
           {this.props.posts.map((post) => {
             return (
               <Post post={post} key={post.id} history={this.props.history}/>

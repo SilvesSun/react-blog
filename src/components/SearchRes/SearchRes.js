@@ -74,7 +74,7 @@ export default class SearchRes extends Component{
     let q = this.getQuery(search);
     let qStr = q.q;
 
-    this.props.history.push(`/blogs/search/?page=${e}&q=${qStr}`);
+    this.props.history.push(`/search/?page=${e}&q=${qStr}`);
     let host = global.constants.host;
     let reqUrl = `${host}/blog/search/?page=${e}&q=${qStr}`;
     this.setState({key:e});
@@ -88,14 +88,12 @@ export default class SearchRes extends Component{
     let pageId = q.page;
     let qStr = q.q;
     return(
-      <div className="main-container" id='main-part' ref={main => this._main = main}>
-        <div  id='sub-head-wrap'>
-          <div className='detail-menu'>
-            <span>当前位置 > <Link to=""> 文章 > </Link>搜索: <span className='search-key' style={{color:'#f55431'}}>{qStr.replace('?q=', '')}</span>({this.state.total}结果)</span>
-            <Link to= ''>
-                {this.state.title}
-            </Link>
-          </div>
+      <div className="main-container" ref={main => this._main = main}>
+        <div className='detail-menu'>
+          <span>当前位置 > <Link to=""> 文章 > </Link>搜索: <span className='search-key' style={{color:'#f55431'}}>{qStr.replace('?q=', '')}</span>({this.state.total}结果)</span>
+          <Link to= ''>
+              {this.state.title}
+          </Link>
         </div>
         <Posts match={this.props.match}
                location={this.props.location}

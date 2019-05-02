@@ -46,7 +46,7 @@ export default class CloudTags extends Component{
             let refSize = Math.round((type.count / this.state.blogCount)* 100);
             let fontSize =(refSize > 2 ? refSize : 2) + 'px';
             return (
-              <Link to={`/blogs/type/${type.tag_id}/`} key={type.tag_id}>
+              <Link to={`/type/${type.tag_id}/`} key={type.tag_id}>
               <span
                 key={type.tag_id} className="tag"
                 style={{color: CloudTags.getRandomColor(), fontSize: fontSize, backgroundColor: 'rgba(96, 95, 95, 0.4)'}}

@@ -5,7 +5,7 @@ import '../../config';
 
 export default class Post extends Component{
   handleTagClick(tagId){
-    let tagUrl = `/blogs/tag/${tagId}`;
+    let tagUrl = `/tag/${tagId}`;
     this.props.history.push(tagUrl)
   }
 
@@ -16,7 +16,7 @@ export default class Post extends Component{
     let reg = '(http|https)://(.*.)(png|jpg|gif)';
     let matchStr = content.match(reg);
     let imgSrc = matchStr ? matchStr[0] : global.constants.defaulImg;
-    let detailUrl = '/blogs/blog/' + post.id;
+    let detailUrl = '/blog/' + post.id;
 
     return(
       <div className="post-info blog-item hvr-float-shadow">
