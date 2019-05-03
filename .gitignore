@@ -24,4 +24,4 @@ yarn-error.log*
 
 server/blogApi/.idea/
 .idea/
-*.pyc
+*.py[cod]
