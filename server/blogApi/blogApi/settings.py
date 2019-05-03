@@ -24,7 +24,7 @@ SECRET_KEY = 'jd01%znl3k*ka@lt#u)wfe*rzs*l0rb50$=-jv8=5%7n@=$2@@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -122,7 +122,7 @@ USE_L10N = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/django-static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
@@ -130,7 +130,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:3000',
     'localhost:3000'
@@ -157,3 +157,4 @@ CACHES = {
         },
     },
 }
+STATIC_ROOT='/home/www/react-blog/server/blogApi/static'
