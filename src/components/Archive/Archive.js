@@ -54,7 +54,7 @@ export default class Archive extends Component{
                             <details className='month-list'>
                               <summary></summary>
                               {posts.map((post)=>{
-                                let blog_url = `/blogs/blog/${post.id}`;
+                                let blog_url = `/blog/${post.id}`;
                                 let create_time = new Date(Date.parse(post.created_time));
                                 return (
                                   <ul className="ant-timeline-sub hvr-grow-shadow" key={post.id}>
