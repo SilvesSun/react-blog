@@ -26,9 +26,8 @@ router.register(r'tag', TagViewSet)
 router.register(r'type', TypeViewSet)
 
 urlpatterns = [
-    path('', include((router.urls, 'blog-app'), namespace='blog_api')),
     path('admin/', admin.site.urls),
-    path('sitemap.xml', sitemap, {'sitemaps': {'blog': BlogSitemap}}, name='django.contrib.sitemaps.views.sitemap')
+    path('/sitemap.xml', sitemap, {'sitemaps': {'blog': BlogSitemap}}, name='django.contrib.sitemaps.views.sitemap')
 ]
 
 
