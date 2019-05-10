@@ -1,4 +1,4 @@
 global.constants = {
   host: "https://f.sksun.blog",
-  defaulImg: "http://supcoder.net/matrix.jpg"
+  defaulImg: "https://supcoder.net/matrix.jpg"
 };
