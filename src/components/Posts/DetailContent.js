@@ -29,7 +29,7 @@ export default class PostDetail extends Component{
       <article className="detail-content">
         <div className="post-info blog-item">
           <div className="post-author">
-            <img src="http://supcoder.net/20190411094326.png" alt="" className='avatar'/>
+            <img src="https://supcoder.net/20190411094326.png" alt="" className='avatar'/>
             <button id='user-card-name' className='button-a'>sksun27</button>
           </div>
           <div className="post-meta">

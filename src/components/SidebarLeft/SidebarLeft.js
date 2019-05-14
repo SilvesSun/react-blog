@@ -50,7 +50,7 @@ export default class SidebarLeft extends Component{
                   <p className="num">{this.state.readCount}<span className='text'>阅读</span></p>
                 </button>
               </div>
-              <img src="http://supcoder.net/20190411094326.png" alt="" className='avatar'/>
+              <img src="https://supcoder.net/20190411094326.png" alt="" className='avatar'/>
             </div>
           </div>
 

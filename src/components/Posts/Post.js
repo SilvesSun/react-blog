@@ -21,7 +21,7 @@ export default class Post extends Component{
     return(
       <div className="post-info blog-item hvr-float-shadow">
         <div className="author">
-          <img src="http://supcoder.net/20190411094326.png" alt="" className='post-avatar'/>
+          <img src="https://supcoder.net/20190411094326.png" alt="" className='post-avatar'/>
           <p className="author-name">sksun27</p>
         </div>
         <div className="tags">
