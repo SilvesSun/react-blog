@@ -1,18 +1,52 @@
 import React,{Component} from 'react';
-import PostDetail from "../Posts/PostDetail";
-import SidebarLeft from "../SidebarLeft/SidebarLeft";
+import Loadable from 'react-loadable';
 import {Button, Col, Icon, Layout, Menu, Row} from "antd";
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
-import SidebarRight from "../SidebarRight/SidebarRight";
-import MainContent from "../MainComponent/MainContent";
-import TypeDetail from "../TypeDetail/TypeDetail";
-import TagDetail from "../TagDetail/TagDetail";
-import SearchRes from "../SearchRes/SearchRes";
-import Archive from "../Archive/Archive";
 import '../base.less'
+import Loading from "../Loading/Loading";
 
 
 const MenuItemGroup = Menu.ItemGroup;
+
+const LoadableMain = Loadable({
+  loader: () => import('../MainComponent/MainContent'),
+  loading: Loading,
+});
+
+const LoadableDetail = Loadable({
+  loader: () => import('../Posts/PostDetail'),
+  loading: Loading,
+});
+
+const LoadableTypeDetail = Loadable({
+  loader: () => import('../TypeDetail/TypeDetail'),
+  loading: Loading,
+});
+
+const LoadableTagDetail = Loadable({
+  loader: () => import('../TagDetail/TagDetail'),
+  loading: Loading,
+});
+
+const LoadableArchive = Loadable({
+  loader: () => import('../Archive/Archive'),
+  loading: Loading,
+});
+
+const LoadableSearchRes = Loadable({
+  loader: () => import('../SearchRes/SearchRes'),
+  loading: Loading,
+});
+
+const LoadableLeft = Loadable({
+  loader: () => import('../SidebarLeft/SidebarLeft'),
+  loading: Loading,
+});
+
+const LoadableRight = Loadable({
+  loader: () => import('../SidebarRight/SidebarRight'),
+  loading: Loading,
+});
 
 export default class DefaultLayout extends Component{
   constructor(props){
@@ -33,7 +67,10 @@ export default class DefaultLayout extends Component{
   handleTypeChange(e){
     this.setState(
       {
-        typeId: e
+        typeId: e,
+        hiddenLeft: 'hidden',
+        hiddenContent: '',
+        hiddenRight: 'hidden',
       }
     );
   }
@@ -69,10 +106,10 @@ export default class DefaultLayout extends Component{
         }
     }else {
       this.setState({
-            hiddenLeft: 'hidden',
-            hiddenContent: '',
-            hiddenRight: 'hidden',
-          })
+        hiddenLeft: 'hidden',
+        hiddenContent: '',
+        hiddenRight: 'hidden',
+      })
     }
   }
 
@@ -124,18 +161,18 @@ export default class DefaultLayout extends Component{
             <div id="Home">
               <Row className="main-wrap">
                 <Col span={3} className={this.state.hiddenLeft + " sidebar-left"} >
-                  <SidebarLeft history={this.props.history} location={this.props.location}/>
+                  <LoadableLeft history={this.props.history} location={this.props.location}/>
                 </Col>
                 <Col span={14} offset={2} id={'main-part'} className={this.state.hiddenContent}>
-                  <Route  path='/blog/:Id' component={PostDetail} />
-                  <Route  path='/type/:Id' component={TypeDetail} />
-                  <Route  path='/tag/:Id' component={TagDetail} />
-                  <Route  path='/archive/' component={Archive} />
-                  <Route  path='/search/' component={SearchRes} />
-                  <Route path="/blogs/" component={MainContent} />
+                  <Route  path='/blog/:Id' component={LoadableDetail} />
+                  <Route  path='/type/:Id' component={LoadableTypeDetail} />
+                  <Route  path='/tag/:Id' component={LoadableTagDetail} />
+                  <Route  path='/archive/' component={LoadableArchive} />
+                  <Route  path='/search/' component={LoadableSearchRes} />
+                  <Route path="/blogs/" component={LoadableMain} />
                   <Route exact path="/" component={() => (<Redirect to={`/blogs/`}/>)} />
                 </Col>
-                <Col span={3} className={this.state.hiddenRight + " sidebar-right"}><SidebarRight history={this.props.history} handleTypeChange={this.handleTypeChange.bind(this)}/></Col>
+                <Col span={3} className={this.state.hiddenRight + " sidebar-right"}><LoadableRight history={this.props.history} handleTypeChange={this.handleTypeChange.bind(this)}/></Col>
               </Row>
             </div>
           </div>

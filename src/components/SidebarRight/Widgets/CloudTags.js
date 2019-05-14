@@ -44,7 +44,7 @@ export default class CloudTags extends Component{
         <div className="tagBall">
           {this.state.types.map((type)=>{
             let refSize = Math.round((type.count / this.state.blogCount)* 100);
-            let fontSize =(refSize > 2 ? refSize : 2) + 'px';
+            let fontSize =(refSize > 10 ? refSize : 10) + 'px';
             return (
               <Link to={`/type/${type.tag_id}/`} key={type.tag_id}>
               <span
