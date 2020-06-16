@@ -1,13 +1,13 @@
-import React,{Component} from 'react';
-import Posts from "../Posts/Posts";
-import * as axios from "axios";
+import React, {Component} from 'react';
+import Posts from '../Posts/Posts';
+import * as axios from 'axios';
 
-import "../../config";
-import {Menu} from "antd";
-import {Link} from "react-router-dom";
+import '../../config';
+import {Menu} from 'antd';
+import {Link} from 'react-router-dom';
 
-export default class MainContent extends Component{
-  constructor(props){
+export default class MainContent extends Component {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -23,43 +23,43 @@ export default class MainContent extends Component{
     };
   }
 
-  getPageData(url){
+  getPageData (url) {
     axios.get(url).then(
-      res=> {
+      res => {
         let data = res.data;
         this.setState({
-            total: data.count,
-            blogArray: data.results,
-            nextPage: data.links.next,
-            previous: data.links.previous,
-            pageSize: data.page_size,
-            current: data.current_page
-          });
+          total: data.count,
+          blogArray: data.results,
+          nextPage: data.links.next,
+          previous: data.links.previous,
+          pageSize: data.page_size,
+          current: data.current_page
+        });
         window.scrollTo(0, 0)
       }
     );
   }
 
-  componentDidMount(){
+  componentDidMount () {
     let host = global.constants.host;
     let page = this.props.location.search;
     let reqUrl = page ? host + '/blog/' + page : host + '/blog/';
     this.getPageData(reqUrl)
   }
 
-  handleChange(e){
-    this.props.history.push('/blogs/?page='+e);
+  handleChange (e) {
+    this.props.history.push('/blogs/?page=' + e);
     let host = global.constants.host;
-    let reqUrl = host + '/blog/?page='+ e;
+    let reqUrl = host + '/blog/?page=' + e;
     this.getPageData(reqUrl)
   }
 
-  isBlogPath(){
+  isBlogPath () {
     let url = this.props.location.pathname;
     return url === '/blogs' || url === '/blogs/';
   }
 
-  render() {
+  render () {
     let search = this.props.location.search;
     let pageId = search.match(/\d+/) ? search.match(/\d+/)[0] : 1;
 
@@ -67,20 +67,21 @@ export default class MainContent extends Component{
       <div className="main-container">
         <div className='sub-head'>
           <Menu mode="horizontal" onClick={this.handleClick}>
-              <Menu.Item key="home">
-                  <Link to="/blogs/"> 文章 </Link>
-              </Menu.Item>
+            <Menu.Item key="home">
+              <Link to="/blogs/"> 文章 </Link>
+            </Menu.Item>
           </Menu>
         </div>
-        <div>
-          <Posts match={this.props.match}
+        <Posts match={this.props.match}
                location={this.props.location}
                history={this.props.history}
                posts={this.state.blogArray}
-               count = {this.state.total}
-               current = {parseInt(pageId)}
+               count={this.state.total}
+               current={parseInt(pageId)}
                handleChange={this.handleChange.bind(this)}
         />
+        <div className="footer">
+          <a href="http://beian.miit.gov.cn/" className="footer-link">粤ICP备18146442号-2</a>
         </div>
       </div>
     )
