@@ -25,3 +25,4 @@ yarn-error.log*
 server/blogApi/.idea/
 .idea/
 *.py[cod]
+package-lock.json
