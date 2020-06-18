@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './CloudTags.less';
 import '../../../common/less/common.less';
-import {Icon} from "antd";
+import {Icon, Tag} from "antd";
 import * as axios from 'axios';
 import {Link} from "react-router-dom";
 
@@ -15,8 +15,11 @@ export default class CloudTags extends Component{
   }
 
   static getRandomColor(){
-    return '#'+('00000'+ (Math.random()*0x1000000<<0).toString(16)).substr(-6);
+    let colorArray = ['blue', 'orange', 'cyan', 'green', 'gold']
+    let index = Math.ceil(Math.random()*(colorArray.length));
+    return colorArray[index];
   }
+
 
   handleClick(e){
     this.props.history.push(`/blogs/type/${e}/`)
@@ -43,17 +46,16 @@ export default class CloudTags extends Component{
         <p className='sidebar-title'><Icon type="tags" />分类</p>
         <div className="tagBall">
           {this.state.types.map((type)=>{
-            let refSize = Math.round((type.count / this.state.blogCount)* 100);
-            let fontSize =(refSize > 10 ? refSize : 10) + 'px';
+            // let refSize = Math.round((type.count / this.state.blogCount)* 100);
+            // let fontSize =(refSize > 10 ? refSize : 10) + 'px';
             return (
               <Link to={`/type/${type.tag_id}/`} key={type.tag_id}>
-              <span
+              <Tag
                 key={type.tag_id} className="tag"
-                style={{color: CloudTags.getRandomColor(), fontSize: fontSize, backgroundColor: 'rgba(96, 95, 95, 0.4)'}}
-                // onClick={this.handleClick.bind(this, type.tag_id)}
                 title={type.name}
                 typeid = {type.tag_id}
-              >{type.name}</span>
+                color={CloudTags.getRandomColor()}
+              >{type.name}({type.count})</Tag >
               </Link>
             )
           })}
