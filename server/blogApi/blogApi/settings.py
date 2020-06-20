@@ -127,7 +127,15 @@ STATIC_URL = '/django-static/'
 REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
     'DEFAULT_PAGINATION_CLASS': 'util.pagination.CustomPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 10,
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/day',
+        'user': '1000/day'
+    }
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -136,7 +144,6 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:3000'
 
 )
-
 
 HAYSTACK_CONNECTIONS = {
     'default': {
@@ -157,4 +164,4 @@ CACHES = {
         },
     },
 }
-STATIC_ROOT='/home/www/react-blog/server/blogApi/static'
+STATIC_ROOT = '/home/www/react-blog/server/blogApi/static'
