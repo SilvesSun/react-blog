@@ -81,7 +81,7 @@ export default class MainContent extends Component {
                handleChange={this.handleChange.bind(this)}
         />
         <div className="footer">
-          <a href="http://beian.miit.gov.cn/" className="footer-link">粤ICP备18146442号-2</a>
+          <a href="http://beian.miit.gov.cn/" className="footer-link">粤ICP备2021147728号</a>
         </div>
       </div>
     )
